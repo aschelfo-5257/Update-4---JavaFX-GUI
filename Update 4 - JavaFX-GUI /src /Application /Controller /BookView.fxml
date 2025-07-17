@@ -1,0 +1,45 @@
+<!-- BookView.fxml -->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BookController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <GridPane hgap="10.0" vgap="10.0">
+        <Label text="Title:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Author:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="authorField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="ISBN:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="isbnField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    </GridPane>
+
+    <HBox spacing="10.0">
+        <Button text="Add Book" onAction="#addBook" />
+        <Button text="Update Book" onAction="#updateBook" />
+        <Button text="Delete Book" onAction="#deleteBook" />
+    </HBox>
+
+    <TableView fx:id="bookTable" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+            <TableColumn prefWidth="75.0" text="Title" />
+            <TableColumn prefWidth="75.0" text="Author" />
+            <TableColumn prefWidth="75.0" text="ISBN" />
+        </columns>
+    </TableView>
+
+    <Label fx:id="messageLabel" text="Welcome to the Book Manager!" />
+</VBox>
