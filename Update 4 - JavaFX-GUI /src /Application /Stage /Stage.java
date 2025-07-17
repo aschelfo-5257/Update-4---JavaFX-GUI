@@ -17,8 +17,4 @@ public class Stage extends Application {
         primaryStage.setScene(scene); // Sets the scene for the stage.
         primaryStage.show(); // Makes the stage visible.
     }
-
-    public static void main(String[] args) {
-        launch(args); // Launches the JavaFX application.
-    }
 }
