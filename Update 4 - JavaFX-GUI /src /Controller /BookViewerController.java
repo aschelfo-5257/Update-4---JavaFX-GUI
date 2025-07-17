@@ -1,45 +1,27 @@
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.Button;
-import java.util.ArrayList;
-import java.util.List;
-
-public class Scene {
-
-    @FXML
-    private Label titleLabel;
-
-    @FXML
-    private Label authorLabel;
-
-    @FXML
-    private TextArea contentArea;
-
-    @FXML
-    private Button prevButton;
-
-    @FXML
-    private Button nextButton;
+public class BookViewerController {
+    @FXML private Label titleLabel;
+    @FXML private Label authorLabel;
+    @FXML private TextArea contentArea;
+    @FXML private Button prevButton;
+    @FXML private Button nextButton;
 
     private List<String> pages;
     private int currentPageIndex = 0;
 
     public void initialize() {
-        // Initialize book data (replace with actual book loading)
         titleLabel.setText("To Kill a Mockingbird");
         authorLabel.setText("Harper Lee");
 
-        pages = new ArrayList<>();
-        pages.add("This is the content of the first page. It's quite interesting!");
-        pages.add("Here's the second page. More exciting things are happening here.");
-        pages.add("And finally, the last page. What a journey!");
+        pages = List.of(
+            "This is the content of the first page. It's quite interesting!",
+            "Here's the second page. More exciting things are happening here.",
+            "And finally, the last page. What a journey!"
+        );
 
         updatePageContent();
 
-        // Button actions
-        prevButton.setOnAction(event -> showPreviousPage());
-        nextButton.setOnAction(event -> showNextPage());
+        prevButton.setOnAction(e -> showPreviousPage());
+        nextButton.setOnAction(e -> showNextPage());
     }
 
     private void updatePageContent() {
